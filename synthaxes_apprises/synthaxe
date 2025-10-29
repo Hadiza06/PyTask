@@ -1,0 +1,9 @@
+missions = ["Python", "Courses", "Sport","Equitaton","Natation"]
+
+for i, mission in enumerate(missions, start=3):
+    print(f"{i}. {mission}")
+
+# Affiche :
+# 1. Python
+# 2. Courses  
+# 3. Sport

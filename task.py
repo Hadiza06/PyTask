@@ -4,15 +4,21 @@ class TaskMaster:
     
     def ajouter_mission(self, description):
         self.missions.append(description)
+    
+    def afficher_missions(self):
+        if not self.missions:
+            print("Aucune mission pour le moment !")
+        else:
+            for i, mission in enumerate(self.missions, start=1):
+                print(f"Tâche à accomplir : {i}. {mission}")
 
-# ↓↓↓ CE CODE S'EXÉCUTE SEULEMENT SI TU LANCES CE FICHIER DIRECTEMENT ↓↓↓
 if __name__ == "__main__":
-    # Créer une instance de TaskMaster
-    mon_gestionnaire = TaskMaster()
+    tm = TaskMaster()
     
-    # Tester la méthode ajouter_mission
-    mon_gestionnaire.ajouter_mission("Apprendre Python")
-    mon_gestionnaire.ajouter_mission("Faire les courses")
+    print("--- Test liste vide ---")
+    tm.afficher_missions()  # ➡️ "Aucune mission pour le moment !"
     
-    # Vérifier que ça marche
-    print("Missions ajoutées :", mon_gestionnaire.missions)
+    print("\n--- Test avec missions ---")
+    tm.ajouter_mission("Apprendre Python")
+    tm.ajouter_mission("Faire du sport")
+    tm.afficher_missions()
